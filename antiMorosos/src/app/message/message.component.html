@@ -1,0 +1,15 @@
+<ion-item *ngIf="moroso">
+  <div slot="start" [class]="!moroso.nombre ? 'dot dot-unread' : 'dot'"></div>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ moroso.nombre }}
+      <span class="date">
+        <ion-note> Total a deber: {{ moroso.cantidad }} €</ion-note>
+        <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+      </span>
+    </h2>
+    <h3>{{ moroso.descripcion }}</h3>
+    <p>
+      
+  </ion-label>
+  </ion-item>

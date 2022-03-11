@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <div *ngIf="moroso" style="overflow: scroll !important;">
+    <div style="position: absolute; display: block; margin-top: 20px; margin-right: 50px; margin-left: 50%; z-index: 2;"><ion-icon name="call-outline"></ion-icon><a href="tel:+{{moroso.telefono}}" style="color: white;">Llamar ahora</a></div>
+    <ion-item >
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="moroso.nombre"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label position="stacked">Cantidad</ion-label>
+      <ion-textarea [(ngModel)]="moroso.cantidad"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha Cobro</ion-label>
+      <ion-textarea [(ngModel)]="moroso.fechaCobro"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      
+      <ion-label position="stacked">Teléfono</ion-label>
+      <ion-textarea [(ngModel)]="moroso.telefono"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="moroso.descripcion"  ></ion-textarea>
+    </ion-item>
+
+    
+    
+    <ion-button expand="block" color="success" (click)="updateMoroso()">
+      <ion-icon name="save" slot="start"></ion-icon>
+      Modificar
+    </ion-button>
+    <ion-button expand="block" color="danger" (click)="deleteMoroso()">
+      <ion-icon name="trash" slot="start"></ion-icon>
+      Borrar
+    </ion-button>
+  </div>
+ 
+ 
+</ion-content>
